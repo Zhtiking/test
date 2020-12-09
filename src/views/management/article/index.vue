@@ -1,10 +1,10 @@
 <template>
-  <div class="more-container"></div>
+  <div class="article-container"></div>
 </template>
 
 <script>
   export default {
-    name: 'More',
+    name: 'Article',
     components: {},
     data() {
       return {}
@@ -14,4 +14,3 @@
     methods: {},
   }
 </script>
-<style lang="scss" scoped></style>

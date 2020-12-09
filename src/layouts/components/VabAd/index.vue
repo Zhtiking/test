@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import { getList } from '@/api/ad'
+  // import { getList } from '@/api/ad'
   export default {
     name: 'VabAd',
     data() {
@@ -30,8 +30,8 @@
     },
     methods: {
       async fetchData() {
-        const { data } = await getList()
-        this.adList = data
+        // const { data } = await getList()
+        // this.adList = data
       },
     },
   }

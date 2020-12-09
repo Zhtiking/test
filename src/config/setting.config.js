@@ -15,20 +15,20 @@ const setting = {
   // 默认的接口地址 如果是开发环境和生产环境走vab-mock-server，当然你也可以选择自己配置成需要的接口地址
   baseURL:
     process.env.NODE_ENV === 'development'
-      ? 'vab-mock-server'
-      : 'vab-mock-server',
+      ? 'http://localhost:8081/api/v1/houtai'
+      : 'http://localhost:8081/api/v1/houtai',
   //标题 （包括初次加载雪花屏的标题 页面的标题 浏览器的标题）
-  title: 'vue-admin-beautiful',
+  title: '香水圈子后台管理',
   //简写
   abbreviation: 'vab',
   //开发环境端口号
   devPort: '80',
   //版本号
   version: process.env.VUE_APP_VERSION,
-  //这一项非常重要！请务必保留MIT协议下package.json及copyright作者信息 即可免费商用，不遵守此项约定你将无法使用该框架，如需自定义版权信息请联系QQ1204505056
+  //这一项非常重要！请务必保留MIT协议下package.json及copyright
   copyright: 'vab',
   //是否显示页面底部自定义版权信息
-  footerCopyright: true,
+  footerCopyright: false,
   //是否显示顶部进度条
   progressBar: true,
   //缓存路由的最大数量
@@ -70,6 +70,6 @@ const setting = {
   //代码生成机生成在view下的文件夹名称
   templateFolder: 'project',
   //是否显示终端donation打印
-  donation: true,
+  donation: false,
 }
 module.exports = setting

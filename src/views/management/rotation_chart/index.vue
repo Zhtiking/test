@@ -1,10 +1,10 @@
 <template>
-  <div class="more-container"></div>
+  <div class="rotation_chart-container"></div>
 </template>
 
 <script>
   export default {
-    name: 'More',
+    name: 'RotationChart',
     components: {},
     data() {
       return {}
@@ -14,4 +14,3 @@
     methods: {},
   }
 </script>
-<style lang="scss" scoped></style>

@@ -32,6 +32,7 @@ module.exports = [
           msg: '帐户或密码不正确。',
         }
       }
+      wait
       return {
         code: 200,
         msg: 'success',

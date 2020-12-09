@@ -12,7 +12,6 @@ export async function login(data) {
     data,
   })
 }
-
 export function getUserInfo(accessToken) {
   return request({
     url: '/userInfo',
@@ -23,10 +22,13 @@ export function getUserInfo(accessToken) {
   })
 }
 
-export function logout() {
+export function logout(accessToken) {
   return request({
     url: '/logout',
     method: 'post',
+    data: {
+      [tokenName]: accessToken,
+    },
   })
 }
 

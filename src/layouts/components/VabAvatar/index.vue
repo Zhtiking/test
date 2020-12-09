@@ -10,8 +10,7 @@
     </span>
 
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item command="github">github地址</el-dropdown-item>
-      <el-dropdown-item command="gitee" divided>码云地址</el-dropdown-item>
+      <el-dropdown-item command="personalsetting">个人中心</el-dropdown-item>
       <el-dropdown-item command="logout" divided>退出登录</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
@@ -35,19 +34,13 @@
           case 'logout':
             this.logout()
             break
-          case 'personalCenter':
-            this.personalCenter()
-            break
-          case 'github':
-            window.open('https://github.com/chuzhixin/vue-admin-beautiful')
-            break
-          case 'gitee':
-            window.open('https://gitee.com/chu1204505056/vue-admin-beautiful')
+          case 'personalsetting':
+            this.personalsetting()
             break
         }
       },
-      personalCenter() {
-        this.$router.push('/personalCenter/personalCenter')
+      personalsetting() {
+        this.$router.push('/personalsetting')
       },
       logout() {
         this.$baseConfirm(
@@ -57,7 +50,7 @@
             await this.$store.dispatch('user/logout')
             if (recordRoute) {
               const fullPath = this.$route.fullPath
-              this.$router.push(`/login?redirect=${fullPath}`)
+              this.$router.push(`/login?${fullPath}`)
             } else {
               this.$router.push('/login')
             }

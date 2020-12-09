@@ -1,10 +1,10 @@
 <template>
-  <div class="more-container"></div>
+  <div class="forum-container"></div>
 </template>
 
 <script>
   export default {
-    name: 'More',
+    name: 'Forum',
     components: {},
     data() {
       return {}
@@ -14,4 +14,3 @@
     methods: {},
   }
 </script>
-<style lang="scss" scoped></style>
