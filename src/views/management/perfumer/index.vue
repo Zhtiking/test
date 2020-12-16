@@ -32,6 +32,7 @@
       v-loading="listLoading"
       :data="list"
       :element-loading-text="elementLoadingText"
+      style="width: 100%"
       @selection-change="setSelectRows"
     >
       <el-table-column show-overflow-tooltip type="selection"></el-table-column>
@@ -60,7 +61,12 @@
         prop="perfumerIntro"
         label="调香师简介"
       ></el-table-column>
-      <el-table-column show-overflow-tooltip label="操作" width="200">
+      <el-table-column
+        show-overflow-tooltip
+        label="操作"
+        width="200"
+        fixed="right"
+      >
         <template #default="{ row }">
           <el-button type="success" @click="handleAdd(row)">编辑</el-button>
           <el-button type="danger" @click="handleDelete(row)">删除</el-button>

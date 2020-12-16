@@ -1,15 +1,8 @@
 import request from '@/utils/request'
 
-export function perfumeGetlist(data) {
+export function getList(data) {
   return request({
-    url: '/perfumeGetlist',
-    method: 'post',
-    data,
-  })
-}
-export function perfumerList(data) {
-  return request({
-    url: '/perfumer/perfumerList',
+    url: '/article/getList',
     method: 'post',
     data,
   })
@@ -17,15 +10,23 @@ export function perfumerList(data) {
 
 export function doDelete(data) {
   return request({
-    url: 'doDelete',
+    url: '/article/doDelete',
     method: 'post',
     data,
   })
 }
 
-export function addPerfumer(data) {
+export function addArticle(data) {
   return request({
-    url: 'addPerfumer',
+    url: '/article/addArticle',
+    method: 'post',
+    data,
+  })
+}
+
+export function ArticleList(data) {
+  return request({
+    url: '/article/ArticleList',
     method: 'post',
     data,
   })

@@ -116,6 +116,7 @@ export const asyncRoutes = [
         name: 'forum',
         component: () => import('@/views/management/forum/index'),
         meta: { title: '圈子管理' },
+        hidden: true,
       },
       {
         path: 'rotation',

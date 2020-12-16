@@ -6,19 +6,19 @@
     @close="close"
   >
     <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="姓名" prop="perfumerName">
+      <el-form-item label="姓名" prop="brandName">
+        <el-input v-model.trim="form.brandName" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="英文名" prop="brandEngname">
         <el-input
-          v-model.trim="form.perfumerName"
+          v-model.trim="form.brandEngname"
           autocomplete="off"
         ></el-input>
       </el-form-item>
-      <el-form-item label="Base64" prop="perfumerBase" hidden>
-        <el-input
-          v-model.trim="form.perfumerBase"
-          autocomplete="off"
-        ></el-input>
+      <el-form-item label="Base64" prop="brandBase" hidden>
+        <el-input v-model.trim="form.brandBase" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="头像" prop="perfumerImg">
+      <el-form-item label="品牌图" prop="brandImg">
         <el-upload
           ref="upload"
           class="upload-demo"
@@ -30,8 +30,8 @@
         >
           <el-image
             v-show="showImg"
-            style="width: 130px; height: 180px"
-            :src="form.perfumerImg"
+            style="width: 500px; height: 100px"
+            :src="form.brandImg"
             draggable="false"
           ></el-image>
           <el-button size="small" type="primary" style="display: block">
@@ -42,9 +42,9 @@
           </div>
         </el-upload>
       </el-form-item>
-      <el-form-item label="简介" prop="perfumerIntro">
+      <el-form-item label="简介" prop="brandIntro">
         <el-input
-          v-model.trim="form.perfumerIntro"
+          v-model.trim="form.brandIntro"
           type="textarea"
           class="field-textarea"
           rows="5"
@@ -59,19 +59,20 @@
 </template>
 
 <script>
-  import { addPerfumer } from '@/api/perfumer'
+  import { addBrand } from '@/api/brand'
   export default {
-    name: 'PerfumerEdit',
+    name: 'BrandEdit',
     components: {},
     data() {
       return {
         showImg: false,
         form: {
-          perfumerId: '',
-          perfumerName: '',
-          perfumerIntro: '',
-          perfumerImg: '',
-          perfumerBase: '',
+          brandId: '',
+          brandName: '',
+          brandEngname: '',
+          brandImg: '',
+          brandIntro: '',
+          brandBase: '',
         },
         title: '',
         dialogFormVisible: false,
@@ -97,13 +98,13 @@
         if (this.title == '添加') {
           this.showImg = true
         }
-        this.form.perfumerImg = URL.createObjectURL(file.raw)
+        this.form.brandImg = URL.createObjectURL(file.raw)
         //图片转化base64
         var reader = new FileReader()
         reader.readAsDataURL(file.raw)
         reader.onload = function (e) {
           // console.log(this.result)
-          that.form.perfumerBase = this.result
+          that.form.brandBase = this.result
         }
       },
       showAdd(row) {
@@ -127,7 +128,7 @@
       save() {
         this.$refs['form'].validate(async (valid) => {
           if (valid) {
-            const { msg } = await addPerfumer(this.form)
+            const { msg } = await addBrand(this.form)
             this.$baseMessage(msg, 'success')
             this.$emit('fetch-data')
             this.close()

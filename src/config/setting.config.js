@@ -46,9 +46,9 @@ const setting = {
   //token存储位置localStorage sessionStorage
   storage: 'localStorage',
   //token失效回退到登录页时是否记录本次的路由
-  recordRoute: true,
+  recordRoute: false,
   //是否显示logo，不显示时设置false，显示时请填写remixIcon图标名称，暂时只支持设置remixIcon
-  logo: 'vuejs-fill',
+  logo: 'titleicon',
   //是否显示在页面高亮错误
   errorLog: ['development'],
   //是否开启登录拦截
